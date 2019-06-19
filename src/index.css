@@ -1,5 +1,50 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  border: 1px solid red;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to left top,
+    #859582,
+    #7f9d81,
+    #76a683,
+    #68ae87,
+    #54b78d,
+    #4abf98,
+    #3dc8a3,
+    #27d0b0,
+    #35dbc0,
+    #42e6d1,
+    #51f0e1,
+    #5ffbf1
+  );
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+.CharactersList_wrapper {
+  width: 30%;
+  margin: 30px auto;
+}
+.character {
+  text-align: center;
+  width: 100%;
+  border: 1px solid #19e9d7;
+  padding: 2rem 0rem 2rem 0rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.sweet-loading {
+  margin: 30px auto;
+  height: 400px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
