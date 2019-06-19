@@ -32,7 +32,7 @@ export const fetchCharacters = () => dispatch => {
   axios
     .get("https://swapi.co/api/people/")
     .then(res => {
-      dispatch(fetchSuccess(res.data));
+      dispatch(fetchSuccess(res.data.results));
       dispatch(fetchingStatus(false));
     })
     .catch(error => {
