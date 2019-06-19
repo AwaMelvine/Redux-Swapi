@@ -12,12 +12,12 @@ export const FAILURE = "FAILURE";
 // the url to fetch characters from is `https://swapi.co/api/people/`
 // remember that now we have controll over our thunk-based action creator
 
-export const fetchSuccess = characters => ({
+const fetchSuccess = characters => ({
   type: SUCCESS,
   payload: characters
 });
 
-export const fetchFailure = message => ({
+const fetchFailure = message => ({
   type: FAILURE,
   payload: message
 });
@@ -33,10 +33,11 @@ export const fetchCharacters = () => dispatch => {
     .get("https://swapi.co/api/people/")
     .then(res => {
       dispatch(fetchSuccess(res.data.results));
-      dispatch(fetchingStatus(false));
     })
     .catch(error => {
       dispatch(fetchFailure(error.message));
+    })
+    .finally(() => {
       dispatch(fetchingStatus(false));
     });
 };
